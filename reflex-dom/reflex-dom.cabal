@@ -11,12 +11,12 @@ Category: FRP, Web, GUI, HTML, Javascript, Reactive, Reactivity, User Interfaces
 Build-type: Simple
 cabal-version: >=1.24
 -- Deal with https://github.com/haskell/cabal/issues/2544 / https://github.com/haskell/cabal/issues/367
-extra-source-files: src/Reflex/Dom/Xhr/Foreign.hs
-                    src/Reflex/Dom/WebSocket/Foreign.hs
-                    src/Reflex/Dom/Xhr/ResponseType.hs
-                    src/Reflex/Dom/Xhr/Exception.hs
-                    java/org/reflexfrp/reflexdom/MainWidget.java
-
+extra-source-files: java/org/reflexfrp/reflexdom/MainWidget.java
+                    -- Commented out due to Stack warning on missing these files
+                    -- src/Reflex/Dom/Xhr/Foreign.hs
+                    -- src/Reflex/Dom/WebSocket/Foreign.hs
+                    -- src/Reflex/Dom/Xhr/ResponseType.hs
+                    -- src/Reflex/Dom/Xhr/Exception.hs
 flag webkit2gtk
   description: Use WebKit2 version of WebKitGTK.
   default: True
