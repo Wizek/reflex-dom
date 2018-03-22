@@ -230,8 +230,9 @@ runImmediateDomBuilderT (ImmediateDomBuilderT a) env eventChan =
           traverseRequesterData (\r -> Identity <$> r) rm
     return x
   where
-    runInAnimationFrame f x = void . DOM.inAnimationFrame' $ \_ -> do
-        v <- synchronously x
+    -- runInAnimationFrame f x = void . DOM.inAnimationFrame' $ \_ -> do
+    runInAnimationFrame f x = void $ do
+        v <- x
         void . liftIO $ f v
 
 class Monad m => HasDocument m where
